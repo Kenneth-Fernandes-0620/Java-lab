@@ -14,25 +14,36 @@ public class LearnString {
         System.out.println("equals: " + inputString.equals(inputString2));
         System.out.println("equalsIgnoreCase: " + inputString.equalsIgnoreCase(inputString.toUpperCase()));
         System.out.println("format: " + String.format("Input String: %s", inputString));
-        System.out.println("getBytes: " + inputString.getBytes());
-        inputString.getChars(1, 5, outputString, 0);
-        System.out.println("getChars: " + outputString.toString());
+        byte[] barr = inputString.getBytes();
+        for (int i = 0; i < barr.length; i++)
+            System.out.println("byte[" + i + "] " + barr[i]);
+
+        inputString.getChars(1, 15, outputString, 0);
+        System.out.println("getChars: ");
+        for (char c : outputString) {
+            System.out.print(c);
+        }
+        System.out.println();
         System.out.println("indexOf: " + inputString.indexOf('a'));
         String str1 = new String(inputString).intern(); // statement - 2
         System.out.println("intern: str 1 == str 2: " + inputString == str1);
         System.out.println("isEmpty: " + inputString.isEmpty());
-        System.out.println("join: " + String.join(inputString2));
+        System.out.println("join: " + String.join(", ", inputString, inputString2));
         System.out.println("lastIndexOf: " + inputString.lastIndexOf('a'));
         System.out.println("replace: " + inputString.replace('a', 'b'));
         System.out.println("replaceAll: " + inputString.replaceAll("c", "d"));
-        System.out.println("split: " + inputString.split(" "));
+        for (String s : inputString.split(" ")) {
+            System.out.println("split: " + s);
+        }
         System.out.println("startsWith: " + inputString.startsWith("a "));
         System.out.println("length: " + inputString.length());
         System.out.println("substring: " + inputString.substring(1, 10));
-        System.out.println("toCharArray: " + inputString.toCharArray().toString());
+        for (char c : inputString.toCharArray()) {
+            System.out.println("toCharArray: " + c);
+        }
         System.out.println("toLowerCase: " + inputString.toLowerCase());
         System.out.println("toUpperCase: " + inputString.toUpperCase());
         System.out.println("trim: " + inputString.trim());
-        System.out.println("valueOf: " + String.valueOf(new int[] { 1, 2, 3, 4 }));
+        System.out.println("valueOf: " + String.valueOf(inputString));
     }
 }

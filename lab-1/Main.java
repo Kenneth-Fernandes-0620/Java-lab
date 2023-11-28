@@ -20,7 +20,7 @@ public class Main {
 
         // Creating One Company
         Main.addCompanies();
-        Company bigBuildingBuilders = new Company(ConstructionCreator.constructionCreator(constructionType.BUILDING, "Big Builders", Stage.PLANNING));
+        Company bigBuildingBuilders = new Company(ConstructionCreator.constructionCreator(ConstructionType.BUILDING, "Big Builders", Stage.PLANNING));
         bigBuildingBuilders.construction.orderMaterials();
         try {
             bigBuildingBuilders.construction.startConstruction();
@@ -30,7 +30,7 @@ public class Main {
 
         // Creating Another Company
         Main.addCompanies();
-        Company poolBuilders = new Company(ConstructionCreator.constructionCreator(constructionType.POOL));
+        Company poolBuilders = new Company(ConstructionCreator.constructionCreator(ConstructionType.POOL));
         poolBuilders.construction.plan();
         poolBuilders.construction.orderMaterials();
         try {
@@ -40,7 +40,7 @@ public class Main {
         }
 
         Main.addCompanies();
-        Company poolBuilders2 = new Company(ConstructionCreator.constructionCreator(constructionType.POOL, "Scenic Pool Builders"));
+        Company poolBuilders2 = new Company(ConstructionCreator.constructionCreator(ConstructionType.POOL, "Scenic Pool Builders"));
         poolBuilders2.construction.plan();
         poolBuilders2.construction.orderMaterials();
         try {

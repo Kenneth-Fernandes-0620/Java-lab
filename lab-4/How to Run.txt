@@ -1,0 +1,2 @@
+javac Main.java -classpath "D:\MCA\Java Programming\lab\lab-4" 
+java Main -classpath "D:\MCA\Java Programming\lab\lab-4" 

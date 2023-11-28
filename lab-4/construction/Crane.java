@@ -1,8 +1,10 @@
-public class Digger extends ConstructionVehicle {
+package construction;
 
-    public Digger(String vehicleName) {
+public class Crane extends ConstructionVehicle {
+
+    public Crane(String vehicleName) {
         super.vehicleName = vehicleName;
-        super.vehicleType = VehicleType.DIGGER;
+        super.vehicleType = VehicleType.CRANE;
     }
 
     @Override
@@ -13,6 +15,7 @@ public class Digger extends ConstructionVehicle {
 
     @Override
     public void maintain() {
+        stopWorking();
         System.out.println(super.vehicleType.name() + " " + super.vehicleName + " has started maintain");
     }
 
@@ -21,4 +24,5 @@ public class Digger extends ConstructionVehicle {
         System.out.println(super.vehicleType.name() + " " + super.vehicleName + " has stopped Working");
         super.isWorking = false;
     }
+
 }

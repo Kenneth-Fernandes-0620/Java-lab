@@ -1,3 +1,4 @@
+package construction;
 public interface ConstructionVehicleInterface {
     public void work();
 

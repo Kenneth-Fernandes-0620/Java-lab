@@ -1,0 +1,3 @@
+interface ConstructionTask {
+    double calculateCost();
+}

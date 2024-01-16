@@ -26,7 +26,7 @@ public class TaskCreationDialog extends JDialog {
 			String hourlyRateInput = hourlyRateTextField.getText();
 
 			try {
-				float hourlyRateValue = Float.parseFloat(hoursInput);
+				float hourlyRateValue = Float.parseFloat(hourlyRateInput);
 				int hoursValue = Integer.parseInt(hoursInput);
 				if (hoursValue <= 0 || hourlyRateValue <= 0f) {
 					throw new NumberFormatException();
@@ -47,9 +47,12 @@ public class TaskCreationDialog extends JDialog {
 			dispose();
 		});
 
-		JPanel dialogRootPanel = new JPanel(new GridLayout(2, 1));
+		JPanel dialogRootPanel = new JPanel();
+		dialogRootPanel.add(new JLabel("Hours: "));
 		dialogRootPanel.add(hoursTextField);
+		dialogRootPanel.add(new JLabel("Rate: "));
 		dialogRootPanel.add(hourlyRateTextField);
+		dialogRootPanel.setLayout(new GridLayout(3, 2));
 
 		JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 		buttonPanel.add(okButton);
